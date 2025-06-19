@@ -5,7 +5,8 @@ keywords: null
 author: John Doe
 language: zh-CN
 timezone: ''
-url: http://example.com
+url: https://sgloria.github.io/sgloria
+root: /sgloria/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -28,7 +29,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -61,5 +62,5 @@ ignore: null
 theme: fluid
 deploy:
   type: git
-  repo: https://github.com/SGloria/sgloria.git
-  branch: main
+  repo: git@github.com:SGloria/sgloria.git
+  branch: gh-pages
