@@ -60,4 +60,6 @@ exclude: null
 ignore: null
 theme: fluid
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/SGloria/sgloria.git
+  branch: main
