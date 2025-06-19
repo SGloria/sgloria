@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Hexo图文图表模板示例教程</title>
+    <link href="/sgloria/2025/06/19/Hexo%E5%9B%BE%E6%96%87%E5%9B%BE%E8%A1%A8%E6%A8%A1%E6%9D%BF%E7%A4%BA%E4%BE%8B%E6%95%99%E7%A8%8B/"/>
+    <url>/sgloria/2025/06/19/Hexo%E5%9B%BE%E6%96%87%E5%9B%BE%E8%A1%A8%E6%A8%A1%E6%9D%BF%E7%A4%BA%E4%BE%8B%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文演示如何在 Hexo 博客中集成 <strong>图文 + 图表 + 数学公式</strong> 等多种排版元素。</p></blockquote><hr><h2 id="🧭-目录"><a href="#🧭-目录" class="headerlink" title="🧭 目录"></a>🧭 目录</h2><ul><li><a href="#-%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA">📷 图片展示</a></li><li><a href="#-%E5%9B%BE%E8%A1%A8%E5%B1%95%E7%A4%BAecharts">📊 图表展示（ECharts）</a></li><li><a href="#-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8Fmathjax">🔢 数学公式（MathJax）</a></li><li><a href="#-%E5%A4%9A%E5%B1%82%E7%BA%A7%E6%8E%92%E7%89%88">📋 多层级排版</a></li><li><a href="#-%E6%80%BB%E7%BB%93">✅ 总结</a></li></ul><hr><h2 id="📷-图片展示"><a href="#📷-图片展示" class="headerlink" title="📷 图片展示"></a>📷 图片展示</h2><p>你可以通过资源文件夹的方式插入图片：</p><p><img src="/sgloria/./Hexo%E5%9B%BE%E6%96%87%E5%9B%BE%E8%A1%A8%E6%A8%A1%E6%9D%BF%E7%A4%BA%E4%BE%8B%E6%95%99%E7%A8%8B/pku.jpeg" alt="示例图片"></p><blockquote><p>请将图片放入与本文同名的目录中，例如：<code>source/_posts/hexo-高级图文图表模板示例/pku.jpeg</code></p></blockquote><hr><h2 id="📊-图表展示（ECharts）"><a href="#📊-图表展示（ECharts）" class="headerlink" title="📊 图表展示（ECharts）"></a>📊 图表展示（ECharts）</h2><p>如果你主题支持 HTML 内容，可以插入图表：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100%; height: 400px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">var</span> chart = echarts.<span class="hljs-title function_">init</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;main&#x27;</span>));</span><br><span class="language-javascript">chart.<span class="hljs-title function_">setOption</span>(&#123;</span><br><span class="language-javascript">  <span class="hljs-attr">title</span>: &#123; <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;ECharts 示例&#x27;</span> &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">tooltip</span>: &#123;&#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">xAxis</span>: &#123; <span class="hljs-attr">data</span>: [<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;D&#x27;</span>] &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">yAxis</span>: &#123;&#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">series</span>: [&#123;</span><br><span class="language-javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;数量&#x27;</span>,</span><br><span class="language-javascript">    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,</span><br><span class="language-javascript">    <span class="hljs-attr">data</span>: [<span class="hljs-number">5</span>, <span class="hljs-number">20</span>, <span class="hljs-number">36</span>, <span class="hljs-number">10</span>]</span><br><span class="language-javascript">  &#125;]</span><br><span class="language-javascript">&#125;);</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure><hr><h2 id="🔢-数学公式（MathJax）"><a href="#🔢-数学公式（MathJax）" class="headerlink" title="🔢 数学公式（MathJax）"></a>🔢 数学公式（MathJax）</h2><p>如果你的主题支持 MathJax，可以插入公式（如 Icarus &#x2F; Fluid 均支持）：</p><p>行内公式：$E &#x3D; mc^2$</p><p>块级公式：</p><p>$$<br>\int_0^\infty e^{-x^2} dx &#x3D; \frac{\sqrt{\pi}}{2}<br>$$</p><hr><h2 id="📋-多层级排版"><a href="#📋-多层级排版" class="headerlink" title="📋 多层级排版"></a>📋 多层级排版</h2><h3 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h3><h4 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h4><h5 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h5><p>段落内容可以使用：</p><ul><li>引用</li><li>加粗 &#x2F; <em>斜体</em></li><li><code>行内代码</code></li></ul><p>也可以插入多段代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">f&quot;Hello, <span class="hljs-subst">&#123;name&#125;</span>!&quot;</span><br></code></pre></td></tr></table></figure><hr><h2 id="✅-总结"><a href="#✅-总结" class="headerlink" title="✅ 总结"></a>✅ 总结</h2><p>你现在可以轻松写出一篇：</p><ul><li>有图片展示</li><li>有图表互动</li><li>有数学公式</li><li>排版丰富结构清晰</li></ul><p>的高级博客啦！🚀</p><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Markdown</tag>
+      
+      <tag>图表</tag>
+      
+      <tag>数学公式</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/sgloria/2025/06/19/hello-world/"/>
     <url>/sgloria/2025/06/19/hello-world/</url>
